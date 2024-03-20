@@ -5,11 +5,11 @@ import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructT
 import scala.collection.mutable.ListBuffer
 
 
-object App {
+object SparkSqlDemo {
   def main(args: Array[String]): Unit = {
 
-    //初始化
-    val sc = SparkUtil.getSession("spark_demo", isLocal = true)
+    //初始化spark环境
+    val sc = SparkUtil.getSession("spark_sql_demo", isLocal = true)
 
     //加载数据
     val data = Seq(
@@ -115,6 +115,9 @@ object App {
     ))
 
     sc.createDataFrame(res,schema2).show()
+
+    //关闭资源
+    sc.close()
 
 
 
