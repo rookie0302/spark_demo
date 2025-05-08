@@ -23,6 +23,7 @@ object SparkCoreDemo {
 
     //关闭资源
     sc.close()
+
   }
 
   /**
